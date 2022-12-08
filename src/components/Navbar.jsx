@@ -1,56 +1,79 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { BsSun } from "react-icons/bs";
+import logo from "../assest/logo.png";
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const listItems = (
+    <>
+      <li>
+        <Link
+          to="/"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+        >
+          Home
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+        >
+          About me
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+        >
+          Skills
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+        >
+          Projects
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+        >
+          Certifications
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+        >
+          Contact
+        </Link>
+      </li>
+      <li>
+        <button>
+            <BsSun/>
+        </button>
+      </li>
+    </>
+  );
 
   return (
     <div>
       <div className="relative flex items-center justify-between">
         <Link to="/" className="inline-flex items-center">
-          logo
+          <img className="w-32" src={logo} alt="" />
         </Link>
+
         <ul className="flex items-center hidden space-x-8 lg:flex">
-          <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Certifications
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              About me
-            </Link>
-          </li>
+          {listItems}
         </ul>
         <div className="lg:hidden">
           <button
@@ -105,48 +128,7 @@ const Navbar = () => {
                   </div>
                 </div>
                 <nav>
-                  <ul className="space-y-4">
-                    <li>
-                      <Link
-                        to="/" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Skills
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Projects
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Certifications
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        About me
-                      </Link>
-                    </li>
-                  </ul>
+                  <ul className="space-y-4">{listItems}</ul>
                 </nav>
               </div>
             </div>
