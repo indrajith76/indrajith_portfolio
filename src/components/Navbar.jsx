@@ -19,7 +19,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          to="/"
+          to="/about"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
         >
           About me
@@ -27,7 +27,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          to="/"
+          to="/skills"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
         >
           Skills
@@ -35,7 +35,7 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          to="/"
+          to="/projects"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
         >
           Projects
