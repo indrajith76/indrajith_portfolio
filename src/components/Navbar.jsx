@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { BsSun } from "react-icons/bs";
+import { BsMoon, BsSun } from "react-icons/bs";
 import logo from "../assest/logo.png";
-
+import { AuthContext } from "../contexts/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { handleThemeChange, isDark } = useContext(AuthContext);
+
+  if (isDark) { 
+    document.body.style.backgroundColor = "#011030";
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
 
   const listItems = (
     <>
@@ -43,23 +50,26 @@ const Navbar = () => {
       </li>
       <li>
         <Link
-          to="/"
+          to="/blogs"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
         >
-          Certifications
+          Blogs
         </Link>
       </li>
       <li>
         <Link
-          to="/"
+          to="/contact"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
         >
           Contact
         </Link>
       </li>
-      <li>
-        <button>
-            <BsSun/>
+      <li className="hidden lg:block">
+        <button
+          className="text-slate-600 text-xl font-semibold hover:rotate-180 duration-500"
+          onClick={handleThemeChange}
+        >
+          {isDark ? <BsSun /> : <BsMoon />}
         </button>
       </li>
     </>
@@ -76,6 +86,9 @@ const Navbar = () => {
           {listItems}
         </ul>
         <div className="lg:hidden">
+          <button className="mr-10">
+            <BsSun />
+          </button>
           <button
             aria-label="Open Menu"
             title="Open Menu"
@@ -98,7 +111,7 @@ const Navbar = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
+            <div className="absolute top-0 left-0 w-full z-10">
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
@@ -108,7 +121,7 @@ const Navbar = () => {
                       title="Company"
                       className="inline-flex items-center"
                     >
-                      logo
+                      <img className="w-[25%]" src={logo} alt="" />
                     </Link>
                   </div>
                   <div>
