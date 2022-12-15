@@ -7,8 +7,8 @@ const Contact = () => {
   const form = useRef();
   const { isDark } = useContext(AuthContext);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  const sendEmail = (event) => {
+    event.preventDefault();
 
     emailjs
       .sendForm(
@@ -18,8 +18,8 @@ const Contact = () => {
         "tkHhC4dMFhrhrwXaE"
       )
       .then(
-        (result) => {
-          console.log(result);
+        (result) => { 
+          event.target.reset();
           toast.success("Email sent successfully");
         },
         (error) => {
@@ -44,7 +44,10 @@ const Contact = () => {
             isDark ? "border-primary shadow-primary" : ""
           }`}
         >
-          <label className={`block ${isDark ? "text-slate-300" : "text-slate-700"}`} htmlFor="user_name">
+          <label
+            className={`block ${isDark ? "text-slate-300" : "text-slate-700"}`}
+            htmlFor="user_name"
+          >
             Name
           </label>
           <input
@@ -55,7 +58,10 @@ const Contact = () => {
             required
             placeholder="Enter you name"
           />
-          <label className={`block ${isDark ? "text-slate-300" : "text-slate-700"}`} htmlFor="user_email">
+          <label
+            className={`block ${isDark ? "text-slate-300" : "text-slate-700"}`}
+            htmlFor="user_email"
+          >
             Email
           </label>
           <input

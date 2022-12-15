@@ -3,7 +3,7 @@ import profile from "../../assest/profile.png";
 import Typewriter from "typewriter-effect";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import About from "../About/About";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
@@ -11,7 +11,6 @@ import reactjs from "../../assest/icons/reactjs.png";
 import Tailwind from "../../assest/icons/Tailwind.png";
 import nodejs from "../../assest/icons/nodejs.png";
 import mongodb from "../../assest/icons/mongodb.png";
-import Certifications from "../Certifications/Certifications";
 import Contact from "../Contact/Contact";
 
 const Home = () => {
@@ -51,6 +50,23 @@ const Home = () => {
               <FaDownload /> Download CV
             </button>
           </Link>
+          <div className="flex gap-2 mt-5 ml-4">
+            <a href="https://github.com/indrajith76" >
+              <button className=" border-2 border-primary px-2 py-2 rounded-lg text-primary font-semibold hover:bg-primary hover:text-white duration-500 flex items-center gap-1">
+                <FaGithub />
+              </button>
+            </a>
+            <a href="https://www.linkedin.com/in/indrajithgoswami/" >
+              <button className=" border-2 border-primary px-2 py-2 rounded-lg text-primary font-semibold hover:bg-primary hover:text-white duration-500 flex items-center gap-1">
+                <FaLinkedin />
+              </button>
+            </a>
+            <a href="https://www.facebook.com/indrajithCSE" >
+              <button className=" border-2 border-primary px-2 py-2 rounded-lg text-primary font-semibold hover:bg-primary hover:text-white duration-500 flex items-center gap-1">
+                <FaFacebook />
+              </button>
+            </a>
+          </div>
         </div>
 
         <div className="w-full lg:w-[40%] mt-8 relative">

@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { handleThemeChange, isDark } = useContext(AuthContext);
 
-  if (isDark) { 
+  if (isDark) {
     document.body.style.backgroundColor = "#011030";
   } else {
     document.body.style.backgroundColor = "white";
@@ -86,8 +86,8 @@ const Navbar = () => {
           {listItems}
         </ul>
         <div className="lg:hidden">
-          <button className="mr-10">
-            <BsSun />
+          <button className="mr-10 text-slate-600" onClick={handleThemeChange}>
+            {isDark ? <BsSun /> : <BsMoon />}
           </button>
           <button
             aria-label="Open Menu"
